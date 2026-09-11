@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Performance Analysis</title>
+</head>
+
+<body style="background-color: #f2f6fc; font-family: Arial; padding: 30px;">
+
+    <h1 style="color: #1e3a8a;">Student Performance Analysis</h1>
+    <p>Dashboard for checking a student's academic performance.</p>
+
+    <hr>
+
+    <h2>Student Details</h2>
+
+    <p><b>Name:</b> <span id="name">Aarav Sharma</span></p>
+    <p><b>Class:</b> <span id="class">10-A</span></p>
+    <p><b>Attendance:</b> <span id="attendance">91%</span></p>
+    <p><b>Overall Average:</b> <span id="average">82%</span></p>
+    <p><b>Class Rank:</b> <span id="rank">6</span></p>
+
+    <button onclick="changeStudent()"
+        style="background-color: #16a34a; color: white; padding: 10px 18px; border: none;">
+        Show Next Student
+    </button>
+
+    <hr>
+
+    <h2>Subject Marks</h2>
+
+    <table border="1" cellpadding="12"
+        style="background-color: white; border-collapse: collapse;">
+
+        <tr style="background-color: #2563eb; color: white;">
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+            <th>Performance</th>
+        </tr>
+
+        <tr>
+            <td>Mathematics</td>
+            <td id="mathMark">88</td>
+            <td id="mathGrade">A</td>
+            <td id="mathPerformance">Excellent</td>
+        </tr>
+
+        <tr>
+            <td>Science</td>
+            <td id="scienceMark">72</td>
+            <td id="scienceGrade">B</td>
+            <td id="sciencePerformance">Needs Improvement</td>
+        </tr>
+
+        <tr>
+            <td>English</td>
+            <td id="englishMark">85</td>
+            <td id="englishGrade">A</td>
+            <td id="englishPerformance">Good</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>Performance Insight</h2>
+
+    <p id="insight" style="background-color: #dbeafe; padding: 15px;">
+        Science score needs improvement. Attendance is very good.
+    </p>
+
+    <button onclick="generateReport()"
+        style="background-color: #2563eb; color: white; padding: 10px 18px; border: none;">
+        Generate Report
+    </button>
+
+    <script>
+        let showingAarav = true;
+
+        function generateReport() {
+            alert("Student report generated successfully!");
+        }
+
+        function changeStudent() {
+            if (showingAarav == true) {
+                document.getElementById("name").innerHTML = "Priya Patel";
+                document.getElementById("class").innerHTML = "10-A";
+                document.getElementById("attendance").innerHTML = "96%";
+                document.getElementById("average").innerHTML = "91%";
+                document.getElementById("rank").innerHTML = "2";
+
+                document.getElementById("mathMark").innerHTML = "94";
+                document.getElementById("mathGrade").innerHTML = "A";
+                document.getElementById("mathPerformance").innerHTML = "Excellent";
+
+                document.getElementById("scienceMark").innerHTML = "89";
+                document.getElementById("scienceGrade").innerHTML = "A";
+                document.getElementById("sciencePerformance").innerHTML = "Excellent";
+
+                document.getElementById("englishMark").innerHTML = "90";
+                document.getElementById("englishGrade").innerHTML = "A";
+                document.getElementById("englishPerformance").innerHTML = "Excellent";
+
+                document.getElementById("insight").innerHTML =
+                    "Excellent performance in every subject. Keep up the good work!";
+
+                showingAarav = false;
+
+            } else {
+                location.reload();
+            }
+        }
+    </script>
+
+</body>
+</html>
